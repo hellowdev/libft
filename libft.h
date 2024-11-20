@@ -6,7 +6,7 @@
 /*   By: ychedmi <ychedmi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 17:51:36 by ychedmi           #+#    #+#             */
-/*   Updated: 2024/11/20 19:29:27 by ychedmi          ###   ########.fr       */
+/*   Updated: 2024/11/21 00:14:12 by ychedmi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-# include <limits.h>
 
 size_t	ft_strlen(const char *str);
 void	*ft_memset(void *b, int c, size_t len);
@@ -51,4 +50,5 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
+
 #endif
