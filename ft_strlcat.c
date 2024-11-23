@@ -6,7 +6,7 @@
 /*   By: ychedmi <ychedmi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 17:41:40 by ychedmi           #+#    #+#             */
-/*   Updated: 2024/11/18 15:29:32 by ychedmi          ###   ########.fr       */
+/*   Updated: 2024/11/21 21:17:21 by ychedmi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,11 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 		dst[i + j] = '\0';
 	}
 	return (i + ft_strlen(src));
+}
+int main()
+{
+	char dst[] = "hello";
+	char src[] = "world";
+	printf("%zu\n", ft_strlcat(dst, src, 2));
+	printf("%s", (dst));
 }
