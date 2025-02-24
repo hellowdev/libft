@@ -1,41 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ychedmi <ychedmi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/17 17:41:33 by ychedmi           #+#    #+#             */
-/*   Updated: 2024/11/18 15:38:29 by ychedmi          ###   ########.fr       */
+/*   Created: 2024/11/17 17:31:27 by ychedmi           #+#    #+#             */
+/*   Updated: 2024/11/18 18:05:15 by ychedmi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t	i;
-	size_t	t;
-	char	*p;
+	size_t			i;
+	unsigned char	*t1;
+	unsigned char	*t2;
 
+	t1 = (unsigned char *)s1;
+	t2 = (unsigned char *)s2;
 	i = 0;
-	t = 0;
-	if (!s1 && !s2)
-		return (NULL);
-	if (!s1)
-		return (ft_strdup(s2));
-	if (!s2)
-		return (ft_strdup(s1));
-	p = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
-	if (!p)
-		return (NULL);
-	while (s1[i])
+	if (!n)
+		return (0);
+	while (t1[i] == t2[i] && i < n - 1)
 	{
-		p[i] = s1[i];
 		i++;
 	}
-	while (s2[t])
-		p[i++] = s2[t++];
-	p[i] = '\0';
-	return (p);
+	if (i == n)
+	{
+		return (0);
+	}
+	return (t1[i] - t2[i]);
 }

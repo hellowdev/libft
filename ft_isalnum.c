@@ -1,41 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ychedmi <ychedmi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/17 17:41:33 by ychedmi           #+#    #+#             */
-/*   Updated: 2024/11/18 15:38:29 by ychedmi          ###   ########.fr       */
+/*   Created: 2024/11/17 17:12:15 by ychedmi           #+#    #+#             */
+/*   Updated: 2024/11/17 17:17:35 by ychedmi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+int	ft_isalnum(int c)
 {
-	size_t	i;
-	size_t	t;
-	char	*p;
-
-	i = 0;
-	t = 0;
-	if (!s1 && !s2)
-		return (NULL);
-	if (!s1)
-		return (ft_strdup(s2));
-	if (!s2)
-		return (ft_strdup(s1));
-	p = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
-	if (!p)
-		return (NULL);
-	while (s1[i])
+	if ((c >= 'a' && c <= 'z') || 
+		(c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9'))
 	{
-		p[i] = s1[i];
-		i++;
+		return (1);
 	}
-	while (s2[t])
-		p[i++] = s2[t++];
-	p[i] = '\0';
-	return (p);
+	return (0);
 }
